@@ -1,12 +1,12 @@
 import React from 'react';
-import './style.css';
+// import './style.css';
 
 const Header = () => {
   return (
     <>
       <header class="header" id="header">
         <nav class="nav container">
-          <a href="" class="nav__logo">Travel</a>
+          <a href="" class="nav__logo">Bespoke</a>
 
           <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
@@ -20,7 +20,7 @@ const Header = () => {
                 <a href="#discover" class="nav__link">Discover</a>
               </li>
               <li class="nav__item">
-                <a href="#place" class="nav__link">Places</a>
+                <a href="#place" class="nav__link">Interier</a>
               </li>
             </ul>
 

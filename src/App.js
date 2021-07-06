@@ -1,11 +1,15 @@
-import './App.css';
+// import './App.css';
+import './styles.scss';
 import './swiper-bundle.min.css';
 
 import home1 from './assets/img/home1.jpg';
 import home2 from './assets/img/home2.jpg';
+import greenSofa from './assets/img/soft-green-sofa.jpg';
+import greenLivingRoom from './assets/img/green-living-room-ideas.jpg';
 
 import Header from './components/header';
 
+// eslint-disable-next-line
 const App = () => {
   return (
     <>
@@ -13,13 +17,13 @@ const App = () => {
 
       {/* <!--==================== HOME ====================--> */}
       <section class="home" id="home">
-        <img src={home1} alt="" class="home__img" />
+        <div class="home__img" ></div>
 
         <div class="home__container container grid">
           <div class="home__data">
-            <span class="home__data-subtitle">Discover your place</span>
+            <span class="home__data-subtitle">Discover your interier</span>
             <h1 class="home__data-title">
-              Explore The <br /> Best <b>Beautiful <br /> Beaches</b>
+              Explore The <br /> Best <b>Beautiful <br /> Design</b>
             </h1>
             <a href="#" class="button">Explore</a>
           </div>
@@ -50,14 +54,14 @@ const App = () => {
 
           <div class="home__info">
             <div>
-              <span class="home__info-title">5 best places to visit</span>
-              <a href="" class="button button--flex button--link home__info-button">
+              <span class="home__info-title">5 best design to explore</span>
+              <a href="#" class="button button--flex button--link home__info-button">
                   More <i class="ri-arrow-right-line"></i>
               </a>
             </div>
 
             <div class="home__info-overlay">
-              <img src={home2} alt="" class="home__info-img" />
+              <img src={greenLivingRoom} alt="" class="home__info-img" />
             </div>
           </div>
         </div>
