@@ -4,37 +4,37 @@ import React from 'react';
 const Header = () => {
   return (
     <>
-      <header class="header" id="header">
-        <nav class="nav container">
-          <a href="" class="nav__logo">Bespoke</a>
+      <header className="header" id="header">
+        <nav className="nav container">
+          <a href="" className="nav__logo">Bespoke</a>
 
-          <div class="nav__menu" id="nav-menu">
-            <ul class="nav__list">
-              <li class="nav__item">
-                <a href="#home" class="nav__link active-link">Home</a>
+          <div className="nav__menu" id="nav-menu">
+            <ul className="nav__list">
+              <li className="nav__item">
+                <a href="#home" className="nav__link active-link">Home</a>
               </li>
-              <li class="nav__item">
-                <a href="#about" class="nav__link">About</a>
+              <li className="nav__item">
+                <a href="#about" className="nav__link">About</a>
               </li>
-              <li class="nav__item">
-                <a href="#discover" class="nav__link">Discover</a>
+              <li className="nav__item">
+                <a href="#discover" className="nav__link">Discover</a>
               </li>
-              <li class="nav__item">
-                <a href="#place" class="nav__link">Interier</a>
+              <li className="nav__item">
+                <a href="#place" className="nav__link">Interier</a>
               </li>
             </ul>
 
-            <div class="nav__dark">
+            <div className="nav__dark">
               {/*  Theme change button  */}
-              <span class="change-theme-name">Dark mode</span>
-              <i class="ri-moon-line change-theme" id="theme-button"></i>
+              <span className="change-theme-name">Dark mode</span>
+              <i className="ri-moon-line change-theme" id="theme-button"></i>
             </div>
 
-            <i class="ri-close-line nav__close" id="nav-close"></i>
+            <i className="ri-close-line nav__close" id="nav-close"></i>
           </div>
 
-          <div class="nav__toggle" id="nav-toggle">
-            <i class="ri-function-line"></i>
+          <div className="nav__toggle" id="nav-toggle">
+            <i className="ri-function-line"></i>
           </div>
         </nav>
       </header>

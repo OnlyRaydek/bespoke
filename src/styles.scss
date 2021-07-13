@@ -312,7 +312,7 @@ input{
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 20, 0.4);
+      background: rgba(0, 0, 20, 0.5);
     }
   }
   &__container{
@@ -336,7 +336,8 @@ input{
     &-title{
       font-size: var(--biggest-font-size);
       font-weight: var(--font-medium);
-      margin-bottom: var(--mb-2-5);
+      // margin-bottom: var(--mb-2-5);
+      margin-bottom: 82px;
     }
   }
   &__social{
@@ -422,224 +423,19 @@ input{
 }
 
 /*=============== ABOUT ===============*/
-.about{
-    &__data{
-        text-align: center;
-    }
-    &__container{
-        row-gap: 2.5rem;
-    }
-    &__description{
-        margin-bottom: var(--mb-2);
-    }
-    &__img{
-        display: flex;
-        column-gap: 1rem;
-        align-items: center;
-        justify-content: center;
 
-        &-overlay{
-            overflow: var(--img-hidden);
-        }
-
-        &-one{
-            width: 130px;
-        }
-        &-two{
-            width: 180px;
-        }
-        &-one,
-        &-two{
-            transition: var(--img-transition);
-        }
-        &-one:hover,
-        &-two:hover{
-            transform: var(--img-scale);
-        }
-    }
-}
 
 /*=============== DISCOVER ===============*/
-.discover{
-    &__card{
-        position: relative;
-        width: 200px;
-        overflow: var(--img-hidden);
-    }
-    &__data{
-        position: absolute;
-        bottom: 1.5rem;
-        left: 1rem;
-    }
-    &__title,
-    &__description{
-        color: var(--white-color);
-    }
-    &__title{
-        font-size: var(--h3-font-size);
-        margin-bottom: var(--mb-0-25);
-    }
-    &__description{
-        display: block;
-        font-size: var(--smaller-font-size);
-    }
-    &__img{
-        transition: var(--img-transition);
-
-        &:hover{
-            transform: var(--img-scale);
-        }
-    }
-}
-
-.swiper-container-3d .swiper-slide-shadow-left,
-.swiper-container-3d .swiper-slide-shadow-right{
-    background-image: none;
-}
 
 
 /*=============== EXPERIENCE ===============*/
-.experience{
-    &__container{
-        row-gap: 2.5rem;
-        justify-content: center;
-        justify-items: center;
-    }
-    &__content{
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 1rem;
-        justify-items: center;
-        padding: 0 2rem;
-    }
-    &__number{
-        font-size: var(--h2-font-size);
-        font-weight: var(--font-semi-bold);
-        margin-bottom: var(--mb-0-5);
-    }
-    &__description{
-        font-size: var(--small-font-size);
-    }
-    &__img{
-        position: relative;
-        padding-bottom: 2rem;
 
-        &-one,
-        &-two{
-            transition: var(--img-transition);
-        }
-        &-one:hover,
-        &-two:hover{
-            transform: var(--img-scale);
-        }
-    }
-    &__overlay{
-        overflow: var(--img-hidden);
-
-        &:nth-child(1){
-            width: 263px;
-            margin-right: 2rem;
-        }
-        &:nth-child(2){
-            width: 120px;
-            position: absolute;
-            top: 2rem;
-            right: 0;
-        }
-    }
-}
 
 /*=============== VIDEO ===============*/
-.video{
-    &__container{
-        padding-bottom: 1rem;
-    }
-    &__description{
-        text-align: center;
-        margin-bottom: var(--mb-2-5);
-    }
-    &__content{
-        position: relative;
-    }
-    &__button{
-        position: absolute;
-        right: 1rem;
-        bottom: -1rem;
-        padding: 1rem 1.5rem;
 
-        &-icon{
-            font-size: 1.2rem;  
-        }
-    }
-}
 
 /*=============== PLACES ===============*/
-.place{
-    &__card,
-    &__img{
-        height: 230px;
-    }
-    &__container{
-        grid-template-columns: repeat(2, max-content);
-        justify-content: center;
-    }
-    &__card{
-        position: relative;
-        overflow: var(--img-hidden);
 
-        &:hover .place__img{
-            transform: var(--img-scale);
-        }
-    }
-    &__img{
-        transition: var(--img-transition);
-    }
-    &__content,
-    &__title{
-        color: var(--white-color);
-    }
-    &__content{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: .75rem .75rem 1rem;
-    }
-    &__rating{
-        align-self: flex-end;
-        display: flex;
-        align-items: center;
-
-        &-icon{
-            font-size: .75rem;
-            margin-right: var(--mb-0-25);
-        }
-        &-number{
-            font-size: var(--small-font-size);
-        }
-    }
-    &__subtitle,
-    &__price{
-        display: block;
-    }
-    &__title{
-        font-size: var(--h3-font-size);
-        margin-bottom: var(--mb-0-25);
-    }
-    &__subtitle{
-        font-size: var(--smaller-font-size);
-        margin-bottom: var(--mb-1-25);
-    }
-    &__button{
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        padding: .75rem 1rem;
-    }
-}
 
 /*=============== SUBSCRIBE ===============*/
 .subscribe{
@@ -847,7 +643,7 @@ input{
     }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
     body{
         margin: 0;
     }
@@ -877,15 +673,6 @@ input{
         &__toggle,
         &__close{
             display: none;
-        }
-    }
-
-    .change{
-        &-theme-name{
-            display: none;
-        }
-        &-theme{
-            color: var(--white-color);
         }
     }
 
@@ -929,68 +716,6 @@ input{
             bottom: 3rem;
         }
     }
-
-    .about{
-        &__container{
-            grid-template-columns: repeat(2, 1fr);
-            align-items: center;
-        }
-        &__data,
-        &__title {
-            text-align: initial;
-        }
-        &__title{
-            margin-bottom: var(--mb-1-5);
-        }
-        &__description{
-            margin-bottom: var(--mb-2);
-        }
-    }
-
-    .discover{
-        &__container{
-            width: 610px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-
-    .discover__container,
-    .place__container{
-        padding-top: 2rem;
-    }
-    
-    .experience{
-        &__overlay:nth-child(1){
-            width: 363px;
-            margin-right: 4rem;
-        }
-        &__overlay:nth-child(2){
-            width: 160px;
-        }
-    }
-
-    .subscribe{
-        &__bg{
-            background: none;
-            padding: 0;
-        }
-        &__container{
-            background-color: var(--first-color-second);
-            padding: 3.5rem 0;
-        }
-        &__input{
-            padding: 0 .5rem;
-        }
-    }
-
-    .footer{
-        &__rights{
-            flex-direction: row;
-            justify-content: space-between;
-        }
-    }
-
 }
 
 /* For large devices */
@@ -1017,71 +742,6 @@ input{
             }
         }
     }
-
-    .about{
-        &__img{
-            &-one{
-                width: 230px;
-            }
-            &-two{
-                width: 290px;
-            }
-        }
-    }
-
-    .discover{
-        &__card{
-            width: 237px;
-        }
-        &__container{
-            width: 700px;
-        }
-        &__data{
-            left: 1.5rem;
-            bottom: 2rem;
-        }
-        &__title{
-            font-size: var(--h2-font-size);
-        }
-    }
-
-    .experience{
-        &__content{
-            margin: var(--mb-1) 0;
-            column-gap: 3.5rem;
-        }
-        &__overlay:nth-child(1){
-            width: 463px;
-            margin-right: 7rem;
-        }
-        &__overlay:nth-child(2){
-            width: 220px;
-            top: 3rem;
-        }
-    }
-
-    .video{
-        &__container{
-            grid-template-columns: .7fr
-        }
-        &__description{
-            padding: 0 8rem;
-        }
-    }
-
-    .place{
-        &__container{
-            gap: 3rem 2rem;
-        }
-        &__card, 
-        &__img{
-            height: 263px;
-        }
-    }
-
-    .footer__content{
-        justify-items: center;
-    }
 }
 
 @media screen and (min-width: 1200px){
@@ -1098,7 +758,8 @@ input{
     .home{
         &__container,
         &__img{
-            height: 640px;
+            // height: 700px;
+            height: 80vh;
         }
     }
 }

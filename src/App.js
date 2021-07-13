@@ -2,66 +2,95 @@
 import './styles.scss';
 import './swiper-bundle.min.css';
 
-import home1 from './assets/img/home1.jpg';
-import home2 from './assets/img/home2.jpg';
-import greenSofa from './assets/img/soft-green-sofa.jpg';
 import greenLivingRoom from './assets/img/green-living-room-ideas.jpg';
 
 import Header from './components/header';
 
 // eslint-disable-next-line
 const App = () => {
+  /*==================== SHOW MENU ====================*/
+  const navMenu = document.getElementById('nav-menu');
+  const navToggle = document.getElementById('nav-toggle');
+  const navClose = document.getElementById('nav-close');
+
+  /*===== MENU SHOW =====*/
+  /* Validate if constant exists */
+  if(navToggle){
+    navToggle.addEventListener('click', () =>{
+      navMenu.classList.add('show-menu')
+    })
+  };
+
+  /*===== MENU HIDDEN =====*/
+  /* Validate if constant exists */
+  if(navClose){
+    navClose.addEventListener('click', () =>{
+      navMenu.classList.remove('show-menu')
+    })
+  };
+
+  /*==================== REMOVE MENU MOBILE ====================*/
+  const navLink = document.querySelectorAll('.nav__link')
+
+  function linkAction(){
+    const navMenu = document.getElementById('nav-menu')
+    // When we click on each nav__link, we remove the show-menu class
+    navMenu.classList.remove('show-menu')
+  }
+  navLink.forEach(n => n.addEventListener('click', linkAction))
+
+
   return (
     <>
       <Header />
 
       {/* <!--==================== HOME ====================--> */}
-      <section class="home" id="home">
-        <div class="home__img" ></div>
+      <section className="home" id="home">
+        <div className="home__img" ></div>
 
-        <div class="home__container container grid">
-          <div class="home__data">
-            <span class="home__data-subtitle">Discover your interier</span>
-            <h1 class="home__data-title">
+        <div className="home__container container grid">
+          <div className="home__data">
+            <span className="home__data-subtitle">Discover your interier</span>
+            <h1 className="home__data-title">
               Explore The <br /> Best <b>Beautiful <br /> Design</b>
             </h1>
-            <a href="#" class="button">Explore</a>
+            <a href="#" className="button">Explore</a>
           </div>
 
-          <div class="home__social">
+          <div className="home__social">
             <a
               href="https://www.facebook.com/"
               target="_blank"
-              class="home__social-link"
+              className="home__social-link"
             >
-              <i class="ri-facebook-box-fill"></i>
+              <i className="ri-facebook-box-fill"></i>
             </a>
             <a
               href="https://www.instagram.com/"
               target="_blank"
-              class="home__social-link"
+              className="home__social-link"
             >
-              <i class="ri-instagram-fill"></i>
+              <i className="ri-instagram-fill"></i>
             </a>
             <a
               href="https://twitter.com/"
               target="_blank"
-              class="home__social-link"
+              className="home__social-link"
             >
-              <i class="ri-twitter-fill"></i>
+              <i className="ri-twitter-fill"></i>
             </a>
           </div>
 
-          <div class="home__info">
+          <div className="home__info">
             <div>
-              <span class="home__info-title">5 best design to explore</span>
-              <a href="#" class="button button--flex button--link home__info-button">
-                  More <i class="ri-arrow-right-line"></i>
+              <span className="home__info-title">5 best design to explore</span>
+              <a href="#" className="button button--flex button--link home__info-button">
+                  More <i className="ri-arrow-right-line"></i>
               </a>
             </div>
 
-            <div class="home__info-overlay">
-              <img src={greenLivingRoom} alt="" class="home__info-img" />
+            <div className="home__info-overlay">
+              <img src={greenLivingRoom} alt="" className="home__info-img" />
             </div>
           </div>
         </div>
