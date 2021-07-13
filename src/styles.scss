@@ -190,11 +190,13 @@ input{
 /*=============== HEADER ===============*/
 .header{
   width: 100%;
+  padding: 10px 0;
   position: fixed;
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
   background-color: transparent;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 /*=============== NAV ===============*/
@@ -208,14 +210,18 @@ input{
   &__toggle{
     color: var(--white-color);
   }
+
   &__logo{
     font-size: 2.5rem;
     font-weight: var(--font-semi-bold);
     text-decoration: underline;
+    transition: color 0.3s;
   }
+
   &__toggle{
     font-size: 1.2rem;
     cursor: pointer;
+    transition: color 0.3s;
   }
 
   &__menu{
@@ -233,11 +239,13 @@ input{
       transition: .4s;
     }
   }
+
   &__list{
     display: flex;
     flex-direction: column;
     row-gap: 2.5rem;
   }
+
   &__link{
     color: var(--text-color-light);
     font-weight: var(--font-semi-bold);
@@ -250,6 +258,7 @@ input{
       opacity: 1;
     }
   }
+
   &__close{
     position: absolute;
     top: .75rem;
@@ -396,30 +405,30 @@ input{
 
 /*=============== BUTTONS ===============*/
 .button{
-    display: inline-block;
-    background-color: var(--first-color);
-    color: var(--white-color);
-    padding: 1rem 2rem;
-    font-weight: var(--font-semi-bold);
-    transition: .3s;
-    
+  display: inline-block;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  padding: 1rem 2rem;
+  font-weight: var(--font-semi-bold);
+  transition: .3s;
+
+  &:hover{
+    background-color: var(--first-color-alt);
+  }
+
+  &--flex{
+    display: flex;
+    align-items: center;
+    column-gap: .25rem;
+  }
+  &--link{
+    background: none;
+    padding: 0;
+
     &:hover{
-        background-color: var(--first-color-alt);
+      background: none;
     }
-    
-    &--flex{
-        display: flex;
-        align-items: center;
-        column-gap: .25rem;
-    }
-    &--link{
-        background: none;
-        padding: 0;
-        
-        &:hover{
-            background: none;
-        }
-    }
+  }
 }
 
 /*=============== ABOUT ===============*/
@@ -439,110 +448,110 @@ input{
 
 /*=============== SUBSCRIBE ===============*/
 .subscribe{
-    &__bg{
-        background-color: var(--first-color-second);
-        padding: 2.5rem 0;
-    }
-    &__title,
-    &__description{
-        color: var(--white-color);
-    }
-    &__description{
-        text-align: center;
-        margin-bottom: var(--mb-2-5);
-    }
-    &__form{
-        background-color: var(--input-color);
-        padding: .5rem;
-        display: flex;
-        justify-content: space-between;
-    }
-    &__input{
-        width: 70%;
-        padding-right: .5rem;
-        background-color: var(--input-color);
-        color: var(--text-color);
+  &__bg{
+    background-color: var(--first-color-second);
+    padding: 2.5rem 0;
+  }
+  &__title,
+  &__description{
+    color: var(--white-color);
+  }
+  &__description{
+    text-align: center;
+    margin-bottom: var(--mb-2-5);
+  }
+  &__form{
+    background-color: var(--input-color);
+    padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__input{
+    width: 70%;
+    padding-right: .5rem;
+    background-color: var(--input-color);
+    color: var(--text-color);
 
-        &::placeholder{
-            color: var(--text-color);
-        }
+    &::placeholder{
+      color: var(--text-color);
     }
+  }
 }
 
 /*=============== SPONSORS ===============*/
 .sponsor{
-    &__container{
-        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-        justify-items: center;
-        row-gap: 3.5rem;
-    }
-    &__content:hover .sponsor__img{
-        filter: invert(.5);
-    }
-    &__img{
-        width: 90px;
-        filter: invert(.7);
-        transition: var(--img-transition);
-    }
+  &__container{
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    justify-items: center;
+    row-gap: 3.5rem;
+  }
+  &__content:hover .sponsor__img{
+    filter: invert(.5);
+  }
+  &__img{
+    width: 90px;
+    // filter: invert(.7);
+    transition: var(--img-transition);
+  }
 }
 
 /*=============== FOOTER ===============*/
 .footer{
-    &__container{
-        row-gap: 5rem;
-    }
-    &__content{
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        row-gap: 2rem;
-    }
-    &__title,
-    &__subtitle{
-        font-size: var(--h3-font-size);
-    }
-    &__title{
-        margin-bottom: var(--mb-0-5);
-    }
-    &__description{
-        margin-bottom: var(--mb-2);
-    }
-    &__social{
-        font-size: 1.25rem;
-        color: var(--title-color);
-        margin-right: var(--mb-1-25);
-    }
-    &__subtitle{
-        margin-bottom: var(--mb-1);
-    }
-    &__item{
-        margin-bottom: var(--mb-0-75);
-    }
-    &__link{
-        color: var(--text-color);
+  &__container{
+    row-gap: 5rem;
+  }
+  &__content{
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    row-gap: 2rem;
+  }
+  &__title,
+  &__subtitle{
+    font-size: var(--h3-font-size);
+  }
+  &__title{
+    margin-bottom: var(--mb-0-5);
+  }
+  &__description{
+    margin-bottom: var(--mb-2);
+  }
+  &__social{
+    font-size: 1.25rem;
+    color: var(--title-color);
+    margin-right: var(--mb-1-25);
+  }
+  &__subtitle{
+    margin-bottom: var(--mb-1);
+  }
+  &__item{
+    margin-bottom: var(--mb-0-75);
+  }
+  &__link{
+    color: var(--text-color);
 
-        &:hover{
-            color: var(--title-color);
-        }
+    &:hover{
+      color: var(--title-color);
     }
-    &__rights{
-        display: flex;
-        flex-direction: column;
-        row-gap: 1.5rem;
-        text-align: center;
-    }
-    &__copy,
-    &__terms-link{
-        font-size: var(--small-font-size);
-        color: var(--text-color-light);
-    }
-    &__terms{
-        display: flex;
-        column-gap: 1.5rem;
-        justify-content: center;
+  }
+  &__rights{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    text-align: center;
+  }
+  &__copy,
+  &__terms-link{
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+  }
+  &__terms{
+    display: flex;
+    column-gap: 1.5rem;
+    justify-content: center;
 
-        &-link:hover{
-            color: var(--text-color);
-        }
+    &-link:hover{
+      color: var(--text-color);
     }
+  }
 }
 
 /*========== SCROLL UP ==========*/

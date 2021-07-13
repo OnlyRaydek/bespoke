@@ -34,7 +34,11 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 function scrollHeader(){
     const header = document.getElementById('header')
     // When the scroll is greater than 100 viewport height, add the scroll-header class to the header tag
-    if(this.scrollY >= 100) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
+    if(this.scrollY >= 100) {
+      header.classList.add('scroll-header');
+    } else {
+      header.classList.remove('scroll-header');
+    }
 }
 window.addEventListener('scroll', scrollHeader)
 
@@ -84,7 +88,7 @@ function finalVideo(){
 videoFile.addEventListener('ended', finalVideo)
 
 
-/*==================== SHOW SCROLL UP ====================*/ 
+/*==================== SHOW SCROLL UP ====================*/
 function scrollUp(){
     const scrollUp = document.getElementById('scroll-up');
     // When the scroll is higher than 200 viewport height, add the show-scroll class to the a tag with the scroll-top class
@@ -121,29 +125,29 @@ const sr = ScrollReveal({
 
 
 sr.reveal(`.home__data, .home__social-link, .home__info,
-           .discover__container,
-           .experience__data, .experience__overlay,
-           .place__card,
-           .sponsor__content,
-           .footer__data, .footer__rights`,{
+          .discover__container,
+          .experience__data, .experience__overlay,
+          .place__card,
+          .sponsor__content,
+          .footer__data, .footer__rights`,{
     origin: 'top',
     interval: 100,
 })
 
-sr.reveal(`.about__data, 
-           .video__description,
-           .subscribe__description`,{
+sr.reveal(`.about__data,
+          .video__description,
+          .subscribe__description`,{
     origin: 'left',
 })
 
-sr.reveal(`.about__img-overlay, 
-           .video__content,
-           .subscribe__form`,{
+sr.reveal(`.about__img-overlay,
+          .video__content,
+          .subscribe__form`,{
     origin: 'right',
     interval: 100,
 })
 
-/*==================== DARK LIGHT THEME ====================*/ 
+/*==================== DARK LIGHT THEME ====================*/
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
 const iconTheme = 'ri-sun-line'

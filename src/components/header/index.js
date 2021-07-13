@@ -2,6 +2,17 @@ import React from 'react';
 // import './style.css';
 
 const Header = () => {
+  function scrollHeader(){
+    const header = document.getElementById('header')
+    // When the scroll is greater than 100 viewport height, add the scroll-header class to the header tag
+    if(this.scrollY >= 1) {
+      header.classList.add('scroll-header');
+    } else {
+      header.classList.remove('scroll-header');
+    }
+  }
+  window.addEventListener('scroll', scrollHeader)
+
   return (
     <>
       <header className="header" id="header">
@@ -24,11 +35,11 @@ const Header = () => {
               </li>
             </ul>
 
-            <div className="nav__dark">
-              {/*  Theme change button  */}
+            {/* //** Theme change button */}
+            {/* <div className="nav__dark">
               <span className="change-theme-name">Dark mode</span>
               <i className="ri-moon-line change-theme" id="theme-button"></i>
-            </div>
+            </div> */}
 
             <i className="ri-close-line nav__close" id="nav-close"></i>
           </div>
