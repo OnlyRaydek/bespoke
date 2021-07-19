@@ -10,69 +10,92 @@ import sponsors4 from './assets/img/sponsors4.png';
 import sponsors5 from './assets/img/sponsors5.png';
 
 import Header from './components/header';
+import Pricing from './components/Pricing';
+import Gallery from './components/Gallery';
 
 // eslint-disable-next-line
 const App = () => {
-  /*==================== SHOW MENU ====================*/
-  const navMenu = document.getElementById('nav-menu');
-  const navToggle = document.getElementById('nav-toggle');
-  const navClose = document.getElementById('nav-close');
-
-  /*===== MENU SHOW =====*/
-  /* Validate if constant exists */
-  if(navToggle){
-    navToggle.addEventListener('click', () =>{
-      navMenu.classList.add('show-menu')
-    })
-  };
-
-  /*===== MENU HIDDEN =====*/
-  /* Validate if constant exists */
-  if(navClose){
-    navClose.addEventListener('click', () =>{
-      navMenu.classList.remove('show-menu')
-    })
-  };
-
-  /*==================== REMOVE MENU MOBILE ====================*/
-  const navLink = document.querySelectorAll('.nav__link')
-
-  function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu className
-    navMenu.classList.remove('show-menu')
-  }
-
-  navLink.forEach(n => n.addEventListener('click', linkAction))
 
   /*==================== SHOW SCROLL UP ====================*/
   function scrollUp(){
     const scrollUp = document.getElementById('scroll-up');
-    // When the scroll is higher than 200 viewport height, add the show-scroll class to the a tag with the scroll-top class
-    if(this.scrollY >= 200) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
-  }
-  window.addEventListener('scroll', scrollUp)
+    // When the scroll is higher than 200 viewport height, add the show-scroll className to the a tag with the scroll-top className
+    if (this.scrollY >= 200) {
+      scrollUp.classList.add('show-scroll');
+    } else {
+      scrollUp.classList.remove('show-scroll')
+    }
+  };
+  window.addEventListener('scroll', scrollUp);
 
   /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-  const sections = document.querySelectorAll('section[id]')
+  const sections = document.querySelectorAll('section[id]');
 
   function scrollActive(){
-    const scrollY = window.pageYOffset
+    const scrollY = window.pageYOffset;
 
     sections.forEach(current =>{
-        const sectionHeight = current.offsetHeight
+        const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 50;
-        let sectionId = current.getAttribute('id')
+        let sectionId = current.getAttribute('id');
 
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
-        }else{
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link');
+        } else {
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
         }
-    })
-  }
-  window.addEventListener('scroll', scrollActive)
+    });
+  };
+  window.addEventListener('scroll', scrollActive);
 
+  /*==================== TYPE EFFECT ====================*/
+
+  const discoverText = [
+    'Discover your interier'
+  ];
+  const exploreText = [
+    'Explore The',
+    'Best Beautiful',
+    'Design'
+  ];
+
+  function typeText(array, classname, time) {
+    setTimeout(() =>{
+      let line = 0;
+      let count = 0;
+      let out = '';
+      let htmlOut = document.querySelector(`.${classname}`);
+
+      if (htmlOut === null) {
+        setTimeout(() => {
+          typeText(array, classname);
+        }, 500)
+      } else {
+        function typeLine() {
+          // draw sroke
+          let interval = setTimeout(function () {
+            out += array[line][count];
+            htmlOut.innerHTML = out;
+            count++;
+            /** //* Проверки! Не закончило=ась ли строка */
+            if (count >= array[line].length) {
+              count = 0;
+              out += '</br>';
+              htmlOut.innerHTML = out;
+              line++;
+              if (line == array.length) {
+                clearTimeout(interval);
+                return true;
+              }
+            }
+            typeLine();
+          }, 200);
+        }
+
+        typeLine();
+      }
+    }, time)
+  }
 
   return (
     <>
@@ -85,11 +108,23 @@ const App = () => {
 
         <div className="home__container container grid">
           <div className="home__data">
-            <span className="home__data-subtitle">Discover your interier</span>
-            <h1 className="home__data-title">
-              Explore The <br /> Best <b>Beautiful <br /> Design</b>
-            </h1>
-            <a href="#" className="button">Explore</a>
+            <span
+              className="home__data-subtitle discover-text"
+              onLoad={typeText(discoverText, 'discover-text', 200)}
+            >
+              {/* Discover your interier */}
+            </span>
+            <h2
+              className="home__data-title explore-text"
+              onLoad={typeText(exploreText, 'explore-text', 5000)}
+            >
+              {/* Explore The <br /> Best <b>Beautiful <br /> Design</b> */}
+            </h2>
+            {/* <a href="#" className="home__data-button button">Explore</a> */}
+            {/* <span className='home__data-subtitle out' onLoad={typeText(t, 'out')}></span> */}
+          </div>
+          <div>
+            <a href="#" className="home__data-button button">Explore</a>
           </div>
 
           <div className="home__social">
@@ -128,6 +163,27 @@ const App = () => {
               <img src={greenLivingRoom} alt="" className="home__info-img" />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* //*<!--==================== ABOUT ====================--> */}
+      <section className="about section">
+        <div className="about__bg">
+          <Pricing />
+        </div>
+      </section>
+
+      {/* //*<!--==================== Gallery ====================--> */}
+      <section className="album section">
+        <div className="album__bg">
+          <Gallery />
+        </div>
+      </section>
+
+      {/* //*<!--==================== Pricing ====================--> */}
+      <section className="pricing section">
+        <div className="pricing__bg">
+          <Pricing />
         </div>
       </section>
 
@@ -176,89 +232,89 @@ const App = () => {
     </main>
 
     {/* //*<!--==================== FOOTER ====================--> */}
-    <footer class="footer section">
-      <div class="footer__container container grid">
-        <div class="footer__content grid">
-          <div class="footer__data">
-            <h3 class="footer__title">Travel</h3>
-            <p class="footer__description">Travel you choose the <br /> destination,
+    <footer className="footer section">
+      <div className="footer__container container grid">
+        <div className="footer__content grid">
+          <div className="footer__data">
+            <h3 className="footer__title">Travel</h3>
+            <p className="footer__description">Travel you choose the <br /> destination,
               we offer you the <br /> experience.
             </p>
             <div>
-              <a href="https://www.facebook.com/" target="_blank" class="footer__social">
-                <i class="ri-facebook-box-fill"></i>
+              <a href="https://www.facebook.com/" target="_blank" className="footer__social">
+                <i className="ri-facebook-box-fill"></i>
               </a>
-              <a href="https://twitter.com/" target="_blank" class="footer__social">
-                <i class="ri-twitter-fill"></i>
+              <a href="https://twitter.com/" target="_blank" className="footer__social">
+                <i className="ri-twitter-fill"></i>
               </a>
-              <a href="https://www.instagram.com/" target="_blank" class="footer__social">
-                <i class="ri-instagram-fill"></i>
+              <a href="https://www.instagram.com/" target="_blank" className="footer__social">
+                <i className="ri-instagram-fill"></i>
               </a>
-              <a href="https://www.youtube.com/" target="_blank" class="footer__social">
-                <i class="ri-youtube-fill"></i>
+              <a href="https://www.youtube.com/" target="_blank" className="footer__social">
+                <i className="ri-youtube-fill"></i>
               </a>
             </div>
           </div>
 
-          <div class="footer__data">
-            <h3 class="footer__subtitle">About</h3>
+          <div className="footer__data">
+            <h3 className="footer__subtitle">About</h3>
             <ul>
-              <li class="footer__item">
-                <a href="" class="footer__link">About Us</a>
+              <li className="footer__item">
+                <a href="" className="footer__link">About Us</a>
               </li>
-              <li class="footer__item">
-                <a href="" class="footer__link">Features</a>
+              <li className="footer__item">
+                <a href="" className="footer__link">Features</a>
               </li>
-              <li class="footer__item">
-                <a href="" class="footer__link">New & Blog</a>
+              <li className="footer__item">
+                <a href="" className="footer__link">New & Blog</a>
               </li>
             </ul>
           </div>
 
-          <div class="footer__data">
-            <h3 class="footer__subtitle">Company</h3>
+          <div className="footer__data">
+            <h3 className="footer__subtitle">Company</h3>
             <ul>
-              <li class="footer__item">
-                <a href="" class="footer__link">Team</a>
+              <li className="footer__item">
+                <a href="" className="footer__link">Team</a>
               </li>
-              <li class="footer__item">
-                <a href="" class="footer__link">Plan y Pricing</a>
+              <li className="footer__item">
+                <a href="" className="footer__link">Plan y Pricing</a>
               </li>
-              <li class="footer__item">
-                <a href="" class="footer__link">Become a member</a>
+              <li className="footer__item">
+                <a href="" className="footer__link">Become a member</a>
               </li>
             </ul>
           </div>
 
-          <div class="footer__data">
-            <h3 class="footer__subtitle">Support</h3>
+          <div className="footer__data">
+            <h3 className="footer__subtitle">Support</h3>
             <ul>
-              <li class="footer__item">
-                <a href="" class="footer__link">FAQs</a>
+              <li className="footer__item">
+                <a href="" className="footer__link">FAQs</a>
               </li>
-              <li class="footer__item">
-                <a href="" class="footer__link">Support Center</a>
+              <li className="footer__item">
+                <a href="" className="footer__link">Support Center</a>
               </li>
-              <li class="footer__item">
-                <a href="" class="footer__link">Contact Us</a>
+              <li className="footer__item">
+                <a href="" className="footer__link">Contact Us</a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div class="footer__rights">
-          <p class="footer__copy">&#169; 2021 Bedimcode. All rigths reserved.</p>
-          <div class="footer__terms">
-            <a href="#" class="footer__terms-link">Terms & Agreements</a>
-            <a href="#" class="footer__terms-link">Privacy Policy</a>
+        <div className="footer__rights">
+          <p className="footer__copy">&#169; 2021 Bedimcode. All rigths reserved.</p>
+          <div className="footer__terms">
+            <a href="#" className="footer__terms-link">Terms & Agreements</a>
+            <a href="#" className="footer__terms-link">Privacy Policy</a>
           </div>
         </div>
       </div>
     </footer>
 
     {/* //*<!--========== SCROLL UP ==========--> */}
-    <a href="#" class="scrollup" id="scroll-up">
-      <i class="ri-arrow-up-line scrollup__icon"></i>
+    <a href="#" className="scrollup" id="scroll-up">
+      <i className="ri-arrow-up-line scrollup__icon"></i>
     </a>
 
     </>

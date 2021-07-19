@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import classnames from 'classnames';
 // import './style.css';
 
 const Header = () => {
@@ -13,13 +14,41 @@ const Header = () => {
   }
   window.addEventListener('scroll', scrollHeader)
 
+  /*==================== MENU VARIABLES ====================*/
+  const navMenu = document.getElementById('nav-menu');
+
+
+  /*==================== REMOVE MENU MOBILE ====================*/
+  const navLink = document.querySelectorAll('.nav__link')
+
+  function linkAction(){
+    const navMenu = document.getElementById('nav-menu')
+    // When we click on each nav__link, we remove the show-menu className
+    navMenu.classList.remove('show-menu')
+  }
+
+  navLink.forEach(n => n.addEventListener('click', linkAction))
+
+  /* //*===== MENU SHOW/HIDE =====*/
+
+  const [isActive, setActive] = useState(false);
+
+  const toggleMenu = () => {
+    console.log('hello');
+    console.log(isActive);
+    setActive(!isActive);
+  };
+
   return (
     <>
       <header className="header" id="header">
         <nav className="nav container">
           <a href="" className="nav__logo">Bespoke</a>
 
-          <div className="nav__menu" id="nav-menu">
+          <div
+            className={classnames('nav__menu', { 'show-menu' : isActive})}
+            id="nav-menu"
+          >
             <ul className="nav__list">
               <li className="nav__item">
                 <a href="#home" className="nav__link active-link">Home</a>
@@ -41,10 +70,14 @@ const Header = () => {
               <i className="ri-moon-line change-theme" id="theme-button"></i>
             </div> */}
 
-            <i className="ri-close-line nav__close" id="nav-close"></i>
+            <i className="ri-close-line nav__close" id="nav-close" onClick={toggleMenu}></i>
           </div>
 
-          <div className="nav__toggle" id="nav-toggle">
+          <div
+            className={'nav__toggle'}
+            id="nav-toggle"
+            onClick={toggleMenu}
+          >
             <i className="ri-function-line"></i>
           </div>
         </nav>
