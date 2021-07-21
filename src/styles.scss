@@ -29,6 +29,8 @@
     --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 75%);
 
+    --active-color: hsl(var(--hue-color), 25%, 50%);
+
     /*========== Font and typography ==========*/
     --body-font: 'Montserrat', sans-serif;
     --title-font: 'Raleway', sans-serif;
@@ -279,25 +281,27 @@ input{
 
 /* Change background header */
 .scroll-header{
-  background-color: var(--body-color);
-  box-shadow: 0 0 4px hsla(190, 64%, 15%, .15);
+  background-color: var(--first-color);
+  box-shadow: 0px 1px 10px 1px var(--active-color);
+
+  // box-shadow: 0px 5px 5px 5px #FFF ;
 
   & .nav__logo,
   & .nav__toggle{
-    color: var(--title-color);
+    color: var(--white-color);
   }
 }
 
 /* Active link */
 .active-link{
   position: relative;
-  color: var(--title-color);
+  color: var(--active-color);
   opacity: 1;
 
   &::before{
     content: '';
     position: absolute;
-    background-color: var(--title-color);
+    background-color: var(--active-color);
     width: 100%;
     height: 2px;
     bottom: -.75rem;
@@ -711,7 +715,7 @@ input{
 
 /* Show scroll */
 .show-scroll {
-    bottom: 4rem;
+  bottom: 4rem;
 }
 
 /*=============== SCROLL BAR ===============*/
@@ -819,10 +823,10 @@ input{
     color: var(--text-color);
   }
   .scroll-header .active-link{
-    color: var(--title-color);
+    color: var(--active-color);
   }
   .scroll-header .active-link::before{
-    background-color: var(--title-color);
+    background-color: var(--active-color);
   }
 
   .scroll-header .change-theme{

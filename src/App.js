@@ -89,7 +89,7 @@ const App = () => {
               }
             }
             typeLine();
-          }, 200);
+          }, 50);
         }
 
         typeLine();
@@ -110,13 +110,13 @@ const App = () => {
           <div className="home__data">
             <span
               className="home__data-subtitle discover-text"
-              onLoad={typeText(discoverText, 'discover-text', 200)}
+              onLoad={typeText(discoverText, 'discover-text', 500)}
             >
               {/* Discover your interier */}
             </span>
             <h2
               className="home__data-title explore-text"
-              onLoad={typeText(exploreText, 'explore-text', 5000)}
+              onLoad={typeText(exploreText, 'explore-text', 1600)}
             >
               {/* Explore The <br /> Best <b>Beautiful <br /> Design</b> */}
             </h2>
