@@ -14,26 +14,21 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
   },
   heroContent: {
-    backgroundColor: theme.palette.background.paper,
+    // backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6),
+  },
+  heroContentTitle: {
+    // backgroundColor: theme.palette.background.paper,
+    color: '#ffffff',
+  },
+  heroContentText: {
+    // backgroundColor: theme.palette.background.paper,
+    color: '#ffffff',
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -71,10 +66,10 @@ export default function Album() {
         {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+            <Typography className={classes.heroContentTitle} component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
               Album layout
             </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
+            <Typography className={classes.heroContentText} variant="h5" align="center" color="textSecondary" paragraph>
               Something short and leading about the collection below—its contents, the creator, etc.
               Make it short and sweet, but not too short so folks don&apos;t simply skip over it
               entirely.

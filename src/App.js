@@ -123,8 +123,8 @@ const App = () => {
             {/* <a href="#" className="home__data-button button">Explore</a> */}
             {/* <span className='home__data-subtitle out' onLoad={typeText(t, 'out')}></span> */}
           </div>
-          <div>
-            <a href="#" className="home__data-button button">Explore</a>
+          <div className="home__data-button">
+            <a href="#" className="button">Explore</a>
           </div>
 
           <div className="home__social">
@@ -173,7 +173,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* //*<!--==================== Gallery ====================--> */}
+      {/* //*<!--==================== ALBUM ====================--> */}
       <section className="album section">
         <div className="album__bg">
           <Gallery />
@@ -194,8 +194,7 @@ const App = () => {
             <h2 className="section__title subscribe__title">
               Subscribe Our <br/> Newsletter
             </h2>
-            <p className="subscribe__description">Subscribe to our newsletter and get a
-              special 30% discount.
+            <p className="subscribe__description">Subscribe to our newsletter and receive the latest news from our company.
             </p>
 
             <form action="" className="subscribe__form">
@@ -209,23 +208,25 @@ const App = () => {
         </div>
       </section>
 
-      {/* //*<!--==================== SPONSORS ====================--> */}
-      <section className="sponsor section">
-        <div className="sponsor__container container grid">
-          <div className="sponsor__content">
-            <img src={sponsors1} alt="" className="sponsor__img" />
+      {/* //*<!--==================== PARTNERS ====================--> */}
+      <section className="partners">
+        <h2 className="partners__title">Our Partners</h2>
+
+        <div className="partners__container container grid">
+          <div className="partners__content">
+            <img src={sponsors1} alt="" className="partners__img" />
           </div>
-          <div className="sponsor__content">
-            <img src={sponsors2} alt="" className="sponsor__img" />
+          <div className="partners__content">
+            <img src={sponsors2} alt="" className="partners__img" />
           </div>
-          <div className="sponsor__content">
-            <img src={sponsors3} alt="" className="sponsor__img" />
+          <div className="partners__content">
+            <img src={sponsors3} alt="" className="partners__img" />
           </div>
-          <div className="sponsor__content">
-            <img src={sponsors4} alt="" className="sponsor__img" />
+          <div className="partners__content">
+            <img src={sponsors4} alt="" className="partners__img" />
           </div>
-          <div className="sponsor__content">
-            <img src={sponsors5} alt="" className="sponsor__img" />
+          <div className="partners__content">
+            <img src={sponsors5} alt="" className="partners__img" />
           </div>
         </div>
       </section>
