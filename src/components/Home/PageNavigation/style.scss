@@ -1,0 +1,46 @@
+/*=============== NAV ===============*/
+.asside_nav {
+  position: fixed;
+  width: 100%;
+  height: 200px;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.asside_nav__logo, .asside_nav__toggle {
+  color: var(--white-color);
+}
+
+.asside_nav__logo {
+  font-weight: var(--font-semi-bold);
+}
+
+.asside_nav__toggle {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.asside_nav__menu {
+  position: relative;
+}
+
+/* Active link */
+.active-link {
+  position: relative;
+  color: blue;
+}
+
+.active-link::before {
+  content: '';
+  position: absolute;
+  background-color: darkblue;
+  width: 100%;
+  height: 2px;
+  bottom: -.75rem;
+  left: 0;
+}

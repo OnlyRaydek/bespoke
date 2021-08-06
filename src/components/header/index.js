@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 // import './style.css';
 
 const Header = () => {
-  function scrollHeader(){
-    const header = document.getElementById('header')
-    // When the scroll is greater than 100 viewport height, add the scroll-header class to the header tag
-    if(this.scrollY >= 1) {
-      header.classList.add('scroll-header');
-    } else {
-      header.classList.remove('scroll-header');
-    }
-  }
-  window.addEventListener('scroll', scrollHeader)
+  /*==================== HEADER CLASSNAME ====================*/
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 70);
+    });
+  }, []);
+
+  /*===== MENU SHOW/HIDE =====*/
+  const [isActive, setActive] = useState(false);
+
+  const toggleMenu = () => {
+    setActive(!isActive);
+  };
 
   /*==================== MENU VARIABLES ====================*/
   const navMenu = document.getElementById('nav-menu');
@@ -29,21 +34,22 @@ const Header = () => {
 
   navLink.forEach(n => n.addEventListener('click', linkAction))
 
-  /* //*===== MENU SHOW/HIDE =====*/
-
-  const [isActive, setActive] = useState(false);
-
-  const toggleMenu = () => {
-    console.log('hello');
-    console.log(isActive);
-    setActive(!isActive);
-  };
-
   return (
     <>
-      <header className="header" id="header">
+      <header
+        className={classnames('header', { 'scroll-header': scroll })}
+        id="header"
+      >
         <nav className="nav container">
-          <a href="" className="nav__logo">Bespoke</a>
+          {/* <a href="" className="nav__logo">Bespoke</a> */}
+            <div
+              className={classnames(
+                'nav__svg',
+                {'nav__svg-logo--full': !scroll},
+                {'nav__svg-logo--mini': scroll}
+              )}
+              alt="Company logo"
+            />
 
           <div
             className={classnames('nav__menu', { 'show-menu' : isActive})}
@@ -57,10 +63,16 @@ const Header = () => {
                 <a href="#about" className="nav__link">About</a>
               </li>
               <li className="nav__item">
+                <a href="#album" className="nav__link">Album</a>
+              </li>
+              <li className="nav__item">
                 <a href="#discover" className="nav__link">Discover</a>
               </li>
               <li className="nav__item">
-                <a href="#place" className="nav__link">Interier</a>
+                <a href="#subscribe" className="nav__link">Sunbscribe</a>
+              </li>
+              <li className="nav__item">
+                <a href="#partners" className="nav__link">Partners</a>
               </li>
             </ul>
 
