@@ -83,7 +83,7 @@ const Main = () => {
         {'main_wrapper--scroll': canScroll}
       )}
     >
-      {usePathname() === '/bespoke' && !canScroll
+      {usePathname() === '/bespoke' || usePathname() === '/bespoke/' || usePathname() === '/' && !canScroll
         ? <Preloader preloadState={hidePreload}/>
         : null
       }
@@ -93,7 +93,7 @@ const Main = () => {
         <ScrollToTop>
           <Switch>
             <Route
-              exact path='/bespoke'
+              exact path='/bespoke/'
               render={(props) => <Home hideFunction={HandleHidePreload} hidePreload={hidePreload} preloadState={hidePreload} {...props} />}
             />
             <Route path='/about' component={About}/>
