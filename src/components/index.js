@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 
-import { Switch, Route, useLocation } from 'react-router-dom'
+import { Switch, Route, useLocation, Redirect } from 'react-router-dom'
 
 import ScrollToTop from './ScrollToTop';
 import Preloader from './Preloader';
@@ -72,6 +72,7 @@ const Main = () => {
   }
 
   console.log(usePathname());
+  console.log(window.location.pathname);
 
   // -------------------------------------------------------
 
@@ -83,7 +84,7 @@ const Main = () => {
         {'main_wrapper--scroll': canScroll}
       )}
     >
-      {usePathname() === '/bespoke' || usePathname() === '/bespoke/' || usePathname() === '/' && !canScroll
+      {usePathname() === '/bespoke' || '/bespoke/' && !canScroll
         ? <Preloader preloadState={hidePreload}/>
         : null
       }
@@ -92,11 +93,13 @@ const Main = () => {
       <main>
         <ScrollToTop>
           <Switch>
+            <Redirect exact from="/" to="/bespoke/" />
+
             <Route
               exact path='/bespoke/'
               render={(props) => <Home hideFunction={HandleHidePreload} hidePreload={hidePreload} preloadState={hidePreload} {...props} />}
             />
-            <Route path='/about' component={About}/>
+            <Route path='/about/' component={About}/>
           </Switch>
         </ScrollToTop>
       </main>
