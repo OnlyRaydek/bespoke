@@ -71,6 +71,8 @@ const Main = () => {
     return location.pathname;
   }
 
+  console.log(usePathname());
+
   // -------------------------------------------------------
 
   return (
