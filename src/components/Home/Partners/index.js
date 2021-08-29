@@ -8,24 +8,26 @@ import sponsors5 from '../../../assets/img/sponsors5.png';
 
 export default function Partners() {
   return (
-    <section className="partners section" id="partners">
-      <h2 className="partners__title">Our Partners</h2>
+    <section className="partners" id="partners">
+      <div className="partners__bg section">
+        <h2 className="partners__title">Our Partners</h2>
 
-      <div className="partners__container container grid">
-        <div className="partners__content">
-          <img src={sponsors1} alt="" className="partners__img" />
-        </div>
-        <div className="partners__content">
-          <img src={sponsors2} alt="" className="partners__img" />
-        </div>
-        <div className="partners__content">
-          <img src={sponsors3} alt="" className="partners__img" />
-        </div>
-        <div className="partners__content">
-          <img src={sponsors4} alt="" className="partners__img" />
-        </div>
-        <div className="partners__content">
-          <img src={sponsors5} alt="" className="partners__img" />
+        <div className="partners__container container grid">
+          <div className="partners__content">
+            <img src={sponsors1} alt="" className="partners__img" />
+          </div>
+          <div className="partners__content">
+            <img src={sponsors2} alt="" className="partners__img" />
+          </div>
+          <div className="partners__content">
+            <img src={sponsors3} alt="" className="partners__img" />
+          </div>
+          <div className="partners__content">
+            <img src={sponsors4} alt="" className="partners__img" />
+          </div>
+          <div className="partners__content">
+            <img src={sponsors5} alt="" className="partners__img" />
+          </div>
         </div>
       </div>
     </section>

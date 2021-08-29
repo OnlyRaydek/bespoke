@@ -7,9 +7,6 @@ export default function Preloader({ preloadState }) {
   const [ loading, setLoading ] = useState(false);
   const [ loadingRemove, setLoadingRemove ] = useState(false);
 
-  console.log(preloadState);
-  console.log(loadingRemove);
-
   useEffect(() => {
     if (preloadState === true) {
       setTimeout(() => setLoading(true), 2000)

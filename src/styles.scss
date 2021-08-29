@@ -84,7 +84,7 @@
 
     /*========== z index ==========*/
     --z-tooltip: 10;
-    --z-fixed: 100;
+    --z-fixed: 10;
 
     /*========== Hover overlay ==========*/
     --img-transition: .3s;
@@ -187,7 +187,7 @@ input{
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
-  margin: 4.5rem 0 0;
+  padding: 4.5rem 0;
 
   &__title{
     font-size: var(--h2-font-size);
@@ -230,7 +230,7 @@ input{
   align-items: center;
   background-color: #FFF;
   opacity: 1;
-  z-index: 1;
+  z-index: 100;
   transition: opacity 2s linear;
 
   &__hide {
@@ -263,7 +263,7 @@ input{
   overflow: hidden;
 
   &--scroll {
-    position: relative;
+    position: inherit;
     overflow: auto;
   }
 }
@@ -617,6 +617,12 @@ input{
 
 /*=============== ABOUT ===============*/
 .about {
+
+  &__header {
+    padding: 1rem 0 7rem;
+    background-color: var(--first-color);
+  }
+
   @media screen and (min-width: 1024px) {
     &__bg {
       display: flex;
@@ -679,7 +685,7 @@ input{
 
 /*=============== PARTNERS ===============*/
 .partners {
-  padding: 5rem 0;
+  // padding: 5rem 0;
 
   &__title {
     margin-bottom: 2.5rem;
@@ -951,7 +957,7 @@ input{
   }
 
   .section{
-    margin: 7rem 0 0;
+    padding: 10rem 0;
   }
 }
 

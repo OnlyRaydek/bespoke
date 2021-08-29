@@ -29,8 +29,8 @@ export default function About() {
   const classes = useStyles();
 
   return (
-    <section className="about section" id="about">
-      <div className="about__bg">
+    <section className="about" id="about">
+      <div className="about__bg section">
         <React.Fragment>
           <CssBaseline />
           {/* Hero unit */}

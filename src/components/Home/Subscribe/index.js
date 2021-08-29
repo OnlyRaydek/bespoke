@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function Sybscribe() {
   return (
-    <section className="subscribe section section__shadow-bottom" id='subscribe'>
-      <div className="subscribe__bg">
+    <section className="subscribe" id='subscribe'>
+      <div className="subscribe__bg section section__shadow-bottom">
         <div className="subscribe__container container">
           <h2 className="section__title subscribe__title">
             Subscribe Our <br/> Newsletter

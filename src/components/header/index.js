@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 import classnames from 'classnames';
 // import './style.css';
 
@@ -19,20 +20,10 @@ const Header = () => {
     setActive(!isActive);
   };
 
-  /*==================== MENU VARIABLES ====================*/
-  const navMenu = document.getElementById('nav-menu');
-
-
   /*==================== REMOVE MENU MOBILE ====================*/
   const navLink = document.querySelectorAll('.nav__link')
 
-  function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu className
-    navMenu.classList.remove('show-menu')
-  }
-
-  navLink.forEach(n => n.addEventListener('click', linkAction))
+  navLink.forEach(n => n.addEventListener('click', toggleMenu))
 
   return (
     <>
@@ -57,22 +48,22 @@ const Header = () => {
           >
             <ul className="nav__list">
               <li className="nav__item">
-                <a href="#home" className="nav__link active-link">Home</a>
+                <Link to='/bespoke' className="nav__link active-link">Home</Link>
               </li>
               <li className="nav__item">
-                <a href="#about" className="nav__link">About</a>
+                <Link to='/about' className="nav__link">About</Link>
               </li>
               <li className="nav__item">
-                <a href="#album" className="nav__link">Album</a>
+                <a href="#" className="nav__link">Gallery</a>
               </li>
               <li className="nav__item">
-                <a href="#discover" className="nav__link">Discover</a>
+                <a href="#" className="nav__link">Discover</a>
               </li>
               <li className="nav__item">
-                <a href="#subscribe" className="nav__link">Sunbscribe</a>
+                <a href="#" className="nav__link">Our Works</a>
               </li>
               <li className="nav__item">
-                <a href="#partners" className="nav__link">Partners</a>
+                <a href="#" className="nav__link">Contacs</a>
               </li>
             </ul>
 
