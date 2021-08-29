@@ -25,10 +25,10 @@ const Home = ({ hideFunction, hidePreload, preloadState }) => {
         <Gallery />
 
         {/* //*<!--==================== Pricing ====================--> */}
-        <Discover />
+        {/* <Discover /> */}
 
         {/* //*<!--==================== SUBSCRIBE ====================--> */}
-        <Subscribe />
+        {/* <Subscribe /> */}
 
         {/* //*<!--==================== PARTNERS ====================--> */}
         <Partners />

@@ -9,6 +9,8 @@ import Header from './Header';
 
 import Home from './Home';
 import About from './About';
+import Album from './Gallery';
+import Contacts from './Contacts';
 import Footer from './Footer';
 
 const Main = () => {
@@ -71,9 +73,6 @@ const Main = () => {
     return location.pathname;
   }
 
-  console.log(usePathname());
-  console.log(window.location.pathname);
-
   // -------------------------------------------------------
 
   return (
@@ -100,6 +99,11 @@ const Main = () => {
               render={(props) => <Home hideFunction={HandleHidePreload} hidePreload={hidePreload} preloadState={hidePreload} {...props} />}
             />
             <Route path='/about/' component={About}/>
+            {/* <Route path='/discover/' component={Album}/> */}
+            {/* <Route path='/works/' component={Works}/> */}
+            <Route path='/album/' component={Album}/>
+            <Route path='/contacts/' component={Contacts}/>
+            <Route path="*" render={() => <Redirect to={{pathname: "/"}}/>} />
           </Switch>
         </ScrollToTop>
       </main>

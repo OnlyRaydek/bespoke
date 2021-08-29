@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const Footer  = () => {
   return (
     <>
-      <footer className="footer section">
+      <footer className="footer">
         <div className="footer__container container grid">
           <div className="footer__content grid">
             <div className="footer__data">

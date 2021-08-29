@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'
 
 import greenLivingRoom from '../../../assets/img/green-living-room-ideas.jpg';
 
@@ -77,7 +78,7 @@ export default function Head({ hidePreload }) {
           {/* <a href="#" className="home__data-button button">Explore</a> */}
         </div>
         <div className="home__data-button">
-          <a href="#" className="button">Explore</a>
+          <Link to="/works/" className="button">Explore</Link>
         </div>
 
         <div className="home__social">
@@ -107,9 +108,9 @@ export default function Head({ hidePreload }) {
         <div className="home__info">
           <div>
             <span className="home__info-title">5 best design to explore</span>
-            <a href="#" className="button button--flex button--link home__info-button">
+            <Link to="/works/" className="button button--flex button--link home__info-button">
                 More <i className="ri-arrow-right-line"></i>
-            </a>
+            </Link>
           </div>
 
           <div className="home__info-overlay">

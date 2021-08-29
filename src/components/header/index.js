@@ -54,16 +54,16 @@ const Header = () => {
                 <Link to='/about/' className="nav__link">About</Link>
               </li>
               <li className="nav__item">
-                <Link to="/album" className="nav__link">Gallery</Link>
+                <Link to="/discover/" className="nav__link">Discover</Link>
               </li>
               <li className="nav__item">
-                <Link to="/discover" className="nav__link">Discover</Link>
+                <Link to="/works/" className="nav__link">Our Works</Link>
               </li>
               <li className="nav__item">
-                <Link to="/works" className="nav__link">Our Works</Link>
+                <Link to="/album/" className="nav__link">Album</Link>
               </li>
               <li className="nav__item">
-                <Link to="/contacts" className="nav__link">Contacs</Link>
+                <Link to="/contacts/" className="nav__link">Contacs</Link>
               </li>
             </ul>
 
