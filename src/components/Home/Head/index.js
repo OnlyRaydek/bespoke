@@ -12,6 +12,7 @@ export default function Head({ hidePreload }) {
   const discoverText = [
     'Discover your interier'
   ];
+
   const exploreText = [
     'Explore The',
     'Best Beautiful',
@@ -58,6 +59,19 @@ export default function Head({ hidePreload }) {
       }, time)
     }
   }
+  // console.log(textState);
+
+  // const srcString = `That's the text I'm going to print out`;
+
+  // const [{content,carriage}, setContent] = useState({content:'',carriage:0});
+
+  // useEffect(() => {
+  //   if(carriage == srcString.length) return
+  //   const delay = setTimeout(() => {
+  //     setContent({content:content+srcString[carriage], carriage: carriage+1})
+  //     clearTimeout(delay)
+  //   }, 0|(Math.random()*200+50))
+  // }, [content]);
 
   return (
     <section className="home section__shadow-bottom" id="home">
@@ -67,16 +81,18 @@ export default function Head({ hidePreload }) {
         <div className="home__data">
           <span
             className="home__data-subtitle discover-text"
-            onLoad={hidePreload ? typeText(discoverText, 'discover-text', 1900) : null}
+            onLoad={hidePreload ? typeText(discoverText, 'discover-text', 1800) : null}
           >
           </span>
+
+          {/* <span>{content}<span className="cursor">|</span></span> */}
           <h2
             className="home__data-title explore-text"
             onLoad={hidePreload ? typeText(exploreText, 'explore-text', 3000) : null}
           >
           </h2>
-          {/* <a href="#" className="home__data-button button">Explore</a> */}
         </div>
+
         <div className="home__data-button">
           <Link to="/works/" className="button">Explore</Link>
         </div>

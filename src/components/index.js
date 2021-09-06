@@ -112,9 +112,12 @@ const Main = () => {
       <Footer />
 
       {/* //*<!--========== SCROLL UP ==========--> */}
-      <a href="#" className={classnames("scrollup", {'show-scroll': scrollUp})} id="scroll-up">
+      <div
+        className={classnames("scrollup", {'show-scroll': scrollUp})}
+        onClick={() => { window.scrollTo(0, 0) }}
+      >
         <i className="ri-arrow-up-line scrollup__icon"></i>
-      </a>
+      </div>
     </div>
     </>
   );

@@ -135,17 +135,13 @@ body.dark-theme{
     margin: 0;
 }
 
-html{
-    scroll-behavior: smooth;
-}
-
 body{
-    margin: var(--header-height) 0 0 0;
-    font-family: var(--body-font);
-    font-size: var(--normal-font-size);
-    background-color: var(--body-color);
-    color: var(--text-color);
-
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  scroll-behavior: smooth;
 }
 
 h1,h2,h3{
@@ -823,6 +819,7 @@ input{
   opacity: .9;
   z-index: var(--z-tooltip);
   transition: .4s;
+  cursor: pointer;
 
   &:hover{
     background-color: var(--first-color-alt);
@@ -980,4 +977,23 @@ input{
   body{
     margin: 0;
   }
+}
+
+.cursor{
+  animation: 1s blink step-end infinite
+}
+@keyframes blink {
+  from, to { color: transparent } 50% { color:var(--white-color) }
+}
+@-moz-keyframes blink {
+  from, to { color: transparent } 50% { color:var(--white-color) }
+}
+@-webkit-keyframes blink {
+  from, to { color: transparent } 50% { color:var(--white-color) }
+}
+@-ms-keyframes blink {
+  from, to { color: transparent } 50% { color:var(--white-color) }
+}
+@-o-keyframes blink {
+  from, to { color: transparent } 50% { color:var(--white-color) }
 }
