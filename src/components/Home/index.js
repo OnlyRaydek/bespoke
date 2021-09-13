@@ -7,12 +7,13 @@ import Gallery from './Gallery';
 import Subscribe from './Subscribe';
 import Partners from './Partners';
 import Preloader from '../Preloader';
+import PageTransition from '../PageTransition';
 
 const Home = ({ hideFunction, hidePreload, preloadState }) => {
 
   return (
     <>
-      {/* <Preloader preloadState={preloadState} /> */}
+      <PageTransition />
 
       <main  className="main" onLoad={hideFunction}>
         {/* //*<!--==================== HEAD ====================--> */}

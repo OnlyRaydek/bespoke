@@ -3,15 +3,13 @@ import classnames from 'classnames';
 
 import logoSvgBlack from '../../assets/img/logo_svg_black.svg';
 
-export default function Preloader({ preloadState }) {
+export default function PageTransition() {
   const [ loading, setLoading ] = useState(false);
   const [ loadingRemove, setLoadingRemove ] = useState(false);
 
   useEffect(() => {
-    if (preloadState === true) {
-      setTimeout(() => setLoading(true), 2000)
-    }
-  }, [preloadState]);
+    setTimeout(() => setLoading(true), 2000)
+  }, []);
 
   useEffect(() => {
     if (loading === true) {
@@ -21,9 +19,9 @@ export default function Preloader({ preloadState }) {
 
   return (
     <div className={classnames(
-        'preloader',
-        {'preloader__hide': loading},
-        {'preloader__remove': loadingRemove}
+      'preloader',
+      {'preloader__hide': loading},
+      {'preloader__remove': loadingRemove}
       )}
     >
       <img

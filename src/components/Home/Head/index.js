@@ -7,7 +7,11 @@ import greenLivingRoom from '../../../assets/img/green-living-room-ideas.jpg';
 export default function Head({ hidePreload }) {
 
   /*==================== TYPE EFFECT ====================*/
-  const [ typeState, setTypeState ] = useState(false);
+  const [ typeState, setTypeState ] = useState(true);
+
+  // useEffect(() => {
+
+  // }, []);
 
   const discoverText = [
     'Discover your interier'
@@ -20,7 +24,7 @@ export default function Head({ hidePreload }) {
   ];
 
   function typeText(array, classname, time) {
-    if (typeState !== true) {
+    if (typeState === true) {
       setTypeState(true);
       setTimeout(() => {
         let line = 0;

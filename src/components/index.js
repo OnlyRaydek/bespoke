@@ -9,6 +9,7 @@ import Header from './Header';
 
 import Home from './Home';
 import About from './About';
+import Works from './Works';
 import Album from './Gallery';
 import Contacts from './Contacts';
 import Footer from './Footer';
@@ -100,16 +101,15 @@ const Main = () => {
             />
             <Route path='/about/' component={About}/>
             {/* <Route path='/discover/' component={Album}/> */}
-            {/* <Route path='/works/' component={Works}/> */}
-            <Route path='/album/' component={Album}/>
+            <Route path='/works/' component={Works}/>
+            {/* <Route path='/album/' component={Album}/> */}
             <Route path='/contacts/' component={Contacts}/>
             <Route path="*" render={() => <Redirect to={{pathname: "/"}}/>} />
           </Switch>
+
+          <Footer />
         </ScrollToTop>
       </main>
-
-      {/* <Home hideFunction={HandleHidePreload} hidePreload={hidePreload} /> */}
-      <Footer />
 
       {/* //*<!--========== SCROLL UP ==========--> */}
       <div
