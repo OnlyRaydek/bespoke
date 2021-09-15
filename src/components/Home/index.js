@@ -9,7 +9,7 @@ import Partners from './Partners';
 import Preloader from '../Preloader';
 import PageTransition from '../PageTransition';
 
-const Home = ({ hideFunction, hidePreload, preloadState }) => {
+const Home = ({ hideFunction, hidePreload }) => {
 
   return (
     <>

@@ -9,10 +9,6 @@ export default function Head({ hidePreload }) {
   /*==================== TYPE EFFECT ====================*/
   const [ typeState, setTypeState ] = useState(true);
 
-  // useEffect(() => {
-
-  // }, []);
-
   const discoverText = [
     'Discover your interier'
   ];
@@ -55,7 +51,7 @@ export default function Head({ hidePreload }) {
                 }
               }
               typeLine();
-            }, 50);
+            }, 80);
           }
 
           typeLine();
@@ -63,6 +59,13 @@ export default function Head({ hidePreload }) {
       }, time)
     }
   }
+
+  useEffect(() => {
+    if (hidePreload === true) {
+      typeText(discoverText, 'discover-text', 2000);
+      typeText(exploreText, 'explore-text', 3400)
+    }
+  }, [hidePreload])
   // console.log(textState);
 
   // const srcString = `That's the text I'm going to print out`;
@@ -85,14 +88,12 @@ export default function Head({ hidePreload }) {
         <div className="home__data">
           <span
             className="home__data-subtitle discover-text"
-            onLoad={hidePreload ? typeText(discoverText, 'discover-text', 1800) : null}
           >
           </span>
 
           {/* <span>{content}<span className="cursor">|</span></span> */}
           <h2
             className="home__data-title explore-text"
-            onLoad={hidePreload ? typeText(exploreText, 'explore-text', 3000) : null}
           >
           </h2>
         </div>
