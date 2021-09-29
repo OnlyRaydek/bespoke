@@ -14,6 +14,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 
+import greenLivingRoom from '../../../assets/img/green-living-room-ideas.jpg';
+
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -79,8 +81,7 @@ export default function Album() {
                 </Typography>
               </Container>
             </div>
-            <Container className={classes.cardGrid} maxWidth="md">
-              {/* End hero unit */}
+            {/* <Container className={classes.cardGrid} maxWidth="md">
               <Grid container spacing={4}>
                 {cards.map((card) => (
                   <Grid item key={card} xs={12} sm={6} md={4}>
@@ -107,7 +108,53 @@ export default function Album() {
                   </Grid>
                 ))}
               </Grid>
-            </Container>
+            </Container> */}
+            <div className="photo-gallery">
+              <div className="container">
+                {/* <div className="intro">
+                  <h2 className="text-center">Gallery</h2>
+                  <p className="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ni</p>
+                </div> */}
+
+                <div className="row photos">
+                  <div className="col-sm-6 col-md-4 col-lg-3 item">
+                    <a href={greenLivingRoom} data-lightbox="photos">
+                      <img className="img-fluid" src={greenLivingRoom} />
+                    </a>
+                  </div>
+
+                  <div className="col-sm-6 col-md-4 col-lg-3 item">
+                    <a href={greenLivingRoom} data-lightbox="photos">
+                      <img className="img-fluid" src={greenLivingRoom} />
+                    </a>
+                  </div>
+
+                  <div className="col-sm-6 col-md-4 col-lg-3 item">
+                    <a href={greenLivingRoom} data-lightbox="photos">
+                      <img className="img-fluid" src={greenLivingRoom} />
+                    </a>
+                  </div>
+
+                  <div className="col-sm-6 col-md-4 col-lg-3 item">
+                    <a href={greenLivingRoom} data-lightbox="photos">
+                      <img className="img-fluid" src={greenLivingRoom} />
+                    </a>
+                  </div>
+
+                  <div className="col-sm-6 col-md-4 col-lg-3 item">
+                    <a href={greenLivingRoom} data-lightbox="photos">
+                      <img className="img-fluid" src={greenLivingRoom} />
+                    </a>
+                  </div>
+
+                  <div className="col-sm-6 col-md-4 col-lg-3 item">
+                    <a href={greenLivingRoom} data-lightbox="photos">
+                      <img className="img-fluid" src={greenLivingRoom} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </main>
         </React.Fragment>
       </div>
