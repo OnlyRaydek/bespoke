@@ -31,10 +31,18 @@ const useStyles = makeStyles((theme) => ({
   heroContentTitle: {
     // backgroundColor: theme.palette.background.paper,
     color: '#ffffff',
+
+    '@media screen and (max-width: 767px)' : {
+        fontSize: '2.5rem',
+    }
   },
   heroContentText: {
     // backgroundColor: theme.palette.background.paper,
     color: '#ffffff',
+
+    '@media screen and (max-width: 767px)' : {
+      fontSize: '1.3rem',
+  }
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -70,15 +78,17 @@ export default function Contacts() {
     <>
       <PageTransition />
 
-      <section className="album" id="album">
-        <div className="album__bg section section__shadow-bottom">
+      <section className="contacts" id="album">
+        <div className='contacts__header'></div>
+
+        <div className="contacts__bg section section__shadow-bottom">
           <React.Fragment>
             <CssBaseline />
             <main>
               {/* Hero unit */}
               <div className={classes.heroContent}>
                 <Container maxWidth="sm">
-                  <Typography className={classes.heroContentTitle} component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+                  <Typography className={classes.heroContentTitle} component="h1" variant="h3" align="center" color="textPrimary" gutterBottom>
                     Contacts layout
                   </Typography>
                   <Typography className={classes.heroContentText} variant="h5" align="left" color="textSecondary" paragraph>

@@ -6,18 +6,23 @@ import Discover from './Discover';
 import Gallery from './Gallery';
 import Subscribe from './Subscribe';
 import Partners from './Partners';
-import Preloader from '../Preloader';
 import PageTransition from '../PageTransition';
 
-const Home = ({ hideFunction, hidePreload }) => {
+const Home = ({
+  hideFunction,
+  hidePreload,
+  pageTransition,
+}) => {
 
   return (
     <>
-      <PageTransition />
+      {pageTransition && <PageTransition />}
 
       <main  className="main" onLoad={hideFunction}>
         {/* //*<!--==================== HEAD ====================--> */}
-        <Head hidePreload={hidePreload}/>
+        <Head
+          hidePreload={hidePreload}
+        />
 
         {/* //*<!--==================== ABOUT ====================--> */}
         <About />

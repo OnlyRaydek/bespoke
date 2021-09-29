@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const Footer  = () => {
   return (
@@ -7,23 +7,20 @@ const Footer  = () => {
         <div className="footer__container container grid">
           <div className="footer__content grid">
             <div className="footer__data">
-              <h3 className="footer__title">Travel</h3>
-              <p className="footer__description">Travel you choose the <br /> destination,
-                we offer you the <br /> experience.
+              <h3 className="footer__title">Social networks</h3>
+              <p className="footer__description">
+                Subscribe to us on facebook <br /> and instagram to keep abreast <br /> of the latest news
               </p>
               <div>
                 <a href="https://www.facebook.com/" target="_blank" className="footer__social">
                   <i className="ri-facebook-box-fill"></i>
                 </a>
-                <a href="https://twitter.com/" target="_blank" className="footer__social">
-                  <i className="ri-twitter-fill"></i>
-                </a>
                 <a href="https://www.instagram.com/" target="_blank" className="footer__social">
                   <i className="ri-instagram-fill"></i>
                 </a>
-                <a href="https://www.youtube.com/" target="_blank" className="footer__social">
+                {/* <a href="https://www.youtube.com/" target="_blank" className="footer__social">
                   <i className="ri-youtube-fill"></i>
-                </a>
+                </a> */}
               </div>
             </div>
 
@@ -42,7 +39,7 @@ const Footer  = () => {
               </ul>
             </div>
 
-            <div className="footer__data">
+            {/* <div className="footer__data">
               <h3 className="footer__subtitle">Company</h3>
               <ul>
                 <li className="footer__item">
@@ -55,7 +52,7 @@ const Footer  = () => {
                   <a href="" className="footer__link">Become a member</a>
                 </li>
               </ul>
-            </div>
+            </div> */}
 
             <div className="footer__data">
               <h3 className="footer__subtitle">Support</h3>
@@ -75,10 +72,6 @@ const Footer  = () => {
 
           <div className="footer__rights">
             <p className="footer__copy">&#169; 2021 Bedimcode. All rigths reserved.</p>
-            <div className="footer__terms">
-              <a href="#" className="footer__terms-link">Terms & Agreements</a>
-              <a href="#" className="footer__terms-link">Privacy Policy</a>
-            </div>
           </div>
         </div>
       </footer>

@@ -65,6 +65,8 @@ export default function Works({  }) {
     <>
       <PageTransition />
 
+      <div className='about__header'></div>
+
       <section className="album" id="album">
         <div className="album__bg section section__shadow-bottom">
           <React.Fragment>

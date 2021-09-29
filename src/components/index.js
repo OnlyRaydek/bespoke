@@ -39,7 +39,9 @@ const Main = () => {
   const [ hidePreload, setHidePreload ] = useState(false);
   const [ canScroll, setCanScroll ] = useState(false);
   const [ scrollUp, setScrollUp ] = useState(false);
+  const [ pageTransition, setPageTransition ] = useState(false);
 
+  const location = useLocation();
 
   // /*==================== HIDE PRELOAD ====================*/
   useEffect(() => {
@@ -48,7 +50,22 @@ const Main = () => {
         setCanScroll(true);
       }, 4000)
     }
-  }, [hidePreload]);
+  }, [hidePreload, location.pathname]);
+
+  // /*==================== CAN SCROLL WHEN NOT IN HOME PAGE ====================*/
+  useEffect(() => {
+    if (
+      location.pathname === '/about'
+      || location.pathname === '/about/'
+      || location.pathname === '/contacts'
+      || location.pathname === '/contacts/'
+      || location.pathname === '/works'
+      || location.pathname === '/works/'
+    ) {
+      setCanScroll(true);
+      setPageTransition(true);
+    }
+  }, [location.pathname]);
 
   // /*==================== SHOW SCROLL UP ====================*/
   useEffect(() => {
@@ -59,66 +76,62 @@ const Main = () => {
 
   // // -------------------------------------------------------
 
-  const HandleHidePreload = () => {
+  const handleHidePreload = () => {
     setTimeout(() => {
       setHidePreload(true);
     }, 2000)
   };
 
-  // /*==================== SHOW SCROLL UP ====================*/
-
-  // custom hook to get the current pathname in React
-
-  const usePathname = () => {
-    const location = useLocation();
-    return location.pathname;
-  }
-
-  // -------------------------------------------------------
-
   return (
     <>
-    <div
-      className={classnames(
-        'main_wrapper',
-        {'main_wrapper--scroll': canScroll}
-      )}
-    >
-      {usePathname() === '/bespoke' || '/bespoke/' && !canScroll
-        ? <Preloader preloadState={hidePreload}/>
-        : null
-      }
-      <Header />
-
-      <main>
-        <ScrollToTop>
-          <Switch>
-            <Redirect exact from="/" to="/bespoke/" />
-
-            <Route
-              exact path='/bespoke/'
-              render={(props) => <Home hideFunction={HandleHidePreload} hidePreload={hidePreload} preloadState={hidePreload} {...props} />}
-            />
-            <Route path='/about/' component={About}/>
-            {/* <Route path='/discover/' component={Album}/> */}
-            <Route path='/works/' component={Works}/>
-            {/* <Route path='/album/' component={Album}/> */}
-            <Route path='/contacts/' component={Contacts}/>
-            <Route path="*" render={() => <Redirect to={{pathname: "/"}}/>} />
-          </Switch>
-
-          <Footer />
-        </ScrollToTop>
-      </main>
-
-      {/* //*<!--========== SCROLL UP ==========--> */}
       <div
-        className={classnames("scrollup", {'show-scroll': scrollUp})}
-        onClick={() => { window.scrollTo(0, 0) }}
+        className={classnames(
+          'main_wrapper',
+          {'main_wrapper--scroll': canScroll}
+        )}
       >
-        <i className="ri-arrow-up-line scrollup__icon"></i>
+        {(location.pathname === '/bespoke' || location.pathname === '/bespoke/') && !canScroll
+          ? <Preloader preloadState={hidePreload}/>
+          : null
+        }
+        <Header currentLocation={location.pathname}/>
+
+        <main>
+          <ScrollToTop>
+            <Switch>
+              <Redirect exact from="/" to="/bespoke/" />
+
+              <Route
+                exact path='/bespoke/'
+                render={(props) => (
+                  <Home
+                    hideFunction={handleHidePreload}
+                    hidePreload={hidePreload}
+                    pageTransition={pageTransition}
+                    {...props}
+                  />
+                )}
+              />
+              <Route path='/about/' component={About}/>
+              {/* <Route path='/discover/' component={Album}/> */}
+              <Route path='/works/' component={Works}/>
+              {/* <Route path='/album/' component={Album}/> */}
+              <Route path='/contacts/' component={Contacts}/>
+              <Route path="*" render={() => <Redirect to={{pathname: "/"}}/>} />
+            </Switch>
+
+            <Footer />
+          </ScrollToTop>
+        </main>
+
+        {/* //*<!--========== SCROLL UP ==========--> */}
+        <div
+          className={classnames("scrollup", {'show-scroll': scrollUp})}
+          onClick={() => { window.scrollTo(0, 0) }}
+        >
+          <i className="ri-arrow-up-line scrollup__icon"></i>
+        </div>
       </div>
-    </div>
     </>
   );
 };

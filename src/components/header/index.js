@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import classnames from 'classnames';
 // import './style.css';
 
-const Header = () => {
+const Header = ({ currentLocation }) => {
   /*==================== HEADER CLASSNAME ====================*/
   const [scroll, setScroll] = useState(false);
 
@@ -21,9 +21,27 @@ const Header = () => {
   };
 
   /*==================== REMOVE MENU MOBILE ====================*/
-  const navLink = document.querySelectorAll('.nav__link')
+  const navLink = document.querySelectorAll('.nav__link');
+  navLink.forEach(n => n.addEventListener('click', toggleMenu));
 
-  navLink.forEach(n => n.addEventListener('click', toggleMenu))
+  const navigation = [
+    {
+      name: 'головна',
+      path: '/bespoke/',
+    },
+    {
+      name: 'про нас',
+      path: '/about/',
+    },
+    {
+      name: 'наші роботи',
+      path: '/works/',
+    },
+    {
+      name: 'контакти',
+      path: '/contacts/',
+    },
+  ]
 
   return (
     <>
@@ -32,39 +50,35 @@ const Header = () => {
         id="header"
       >
         <nav className="nav container">
-          {/* <a href="" className="nav__logo">Bespoke</a> */}
-            <div
-              className={classnames(
-                'nav__svg',
-                {'nav__svg-logo--full': !scroll},
-                {'nav__svg-logo--mini': scroll}
-              )}
-              alt="Company logo"
-            />
+          <Link to='/bespoke/'
+            className={classnames(
+              'nav__svg',
+              {'nav__svg-logo--full': !scroll},
+              {'nav__svg-logo--mini': scroll}
+            )}
+            alt="Company logo"
+          />
 
           <div
             className={classnames('nav__menu', { 'show-menu' : isActive})}
             id="nav-menu"
           >
             <ul className="nav__list">
-              <li className="nav__item">
-                <Link to='/bespoke/' className="nav__link active-link">Home</Link>
-              </li>
-              <li className="nav__item">
-                <Link to='/about/' className="nav__link">About</Link>
-              </li>
-              {/* <li className="nav__item">
-                <Link to="/discover/" className="nav__link">Discover</Link>
-              </li> */}
-              <li className="nav__item">
-                <Link to="/works/" className="nav__link">Our Works</Link>
-              </li>
-              {/* <li className="nav__item">
-                <Link to="/album/" className="nav__link">Album</Link>
-              </li> */}
-              <li className="nav__item">
-                <Link to="/contacts/" className="nav__link">Contacs</Link>
-              </li>
+              {navigation.map((element) => {
+                return (
+                  <li className="nav__item">
+                    <Link
+                      to={element.path}
+                      className={classnames(
+                        "nav__link",
+                        {"active-link": currentLocation === element.path},
+                      )}
+                    >
+                      {element.name}
+                    </Link>
+                  </li>
+                )
+              })}
             </ul>
 
             {/* //** Theme change button */}
