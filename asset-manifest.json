@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/bespoke/static/css/main.36e241dc.chunk.css",
-    "main.js": "/bespoke/static/js/main.3183e604.chunk.js",
-    "main.js.map": "/bespoke/static/js/main.3183e604.chunk.js.map",
+    "main.css": "/bespoke/static/css/main.973beeef.chunk.css",
+    "main.js": "/bespoke/static/js/main.be57256e.chunk.js",
+    "main.js.map": "/bespoke/static/js/main.be57256e.chunk.js.map",
     "runtime-main.js": "/bespoke/static/js/runtime-main.2f111846.js",
     "runtime-main.js.map": "/bespoke/static/js/runtime-main.2f111846.js.map",
     "static/js/2.3c1215af.chunk.js": "/bespoke/static/js/2.3c1215af.chunk.js",
     "static/js/2.3c1215af.chunk.js.map": "/bespoke/static/js/2.3c1215af.chunk.js.map",
     "index.html": "/bespoke/index.html",
-    "static/css/main.36e241dc.chunk.css.map": "/bespoke/static/css/main.36e241dc.chunk.css.map",
+    "static/css/main.973beeef.chunk.css.map": "/bespoke/static/css/main.973beeef.chunk.css.map",
     "static/js/2.3c1215af.chunk.js.LICENSE.txt": "/bespoke/static/js/2.3c1215af.chunk.js.LICENSE.txt",
     "static/media/about.7b5fc88f.jpg": "/bespoke/static/media/about.7b5fc88f.jpg",
     "static/media/green-living-room-ideas.e8b1b3c6.jpg": "/bespoke/static/media/green-living-room-ideas.e8b1b3c6.jpg",
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.2f111846.js",
     "static/js/2.3c1215af.chunk.js",
-    "static/css/main.36e241dc.chunk.css",
-    "static/js/main.3183e604.chunk.js"
+    "static/css/main.973beeef.chunk.css",
+    "static/js/main.be57256e.chunk.js"
   ]
 }
